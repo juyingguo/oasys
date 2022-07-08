@@ -102,7 +102,7 @@ public class recordInterceptor extends HandlerInterceptorAdapter {
                 if (!userLogDao.findByUserlaset(1l).getUrl().equals(systemMenu.getMenuUrl())) {
                     uLog.setTitle(systemMenu.getMenuName());
                     //只要匹配到一个保存咯
-                    userLogDao.save(uLog);
+//                    userLogDao.save(uLog);// TODO: 2022/7/8 有异常先关闭 
                 }
             }
         }
