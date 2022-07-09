@@ -67,8 +67,8 @@ a:hover {
 		<!--盒子尾-->
 		<div class="box-footer">
 			<input class="btn btn-primary" id="save" type="submit" value="保存" />
-			<input class="btn btn-default" id="cancel" type="submit" value="取消"
-				onclick="window.history.back();" />
+			<input class="btn btn-default" id="cancel" value="取消"
+				onclick="window.history.back();" /><#--取消，直接返回，按钮的宽度太宽，待调整-->
 		</div>
 		</form>
 	</div>
