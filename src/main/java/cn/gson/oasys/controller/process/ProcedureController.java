@@ -176,25 +176,23 @@ public class ProcedureController {
 		String val=req.getParameter("val");
 		
 		if(roleid>=3L && Objects.equals(fatherid, userid)){
-			
-		
-		List<DetailsBurse> mm=bu.getDetails();
-		for (DetailsBurse detailsBurse : mm) {
-			allinvoice+=detailsBurse.getInvoices();
-			allmoney+=detailsBurse.getDetailmoney();
-			detailsBurse.setBurs(bu);
-		}
-		//在报销费用表里面set票据总数和总金额
-		bu.setAllinvoices(allinvoice);
-		bu.setAllMoney(allmoney);
-		bu.setUsermoney(zhuti);
-		//set主表
-		ProcessList pro=bu.getProId();
-		proservice.index5(pro, val, lu, filePath,reuser.getUserName());
-		budao.save(bu);
-		
-		//存审核表
-		proservice.index7(reuser, pro);
+			List<DetailsBurse> mm=bu.getDetails();
+			for (DetailsBurse detailsBurse : mm) {
+				allinvoice+=detailsBurse.getInvoices();
+				allmoney+=detailsBurse.getDetailmoney();
+				detailsBurse.setBurs(bu);
+			}
+			//在报销费用表里面set票据总数和总金额
+			bu.setAllinvoices(allinvoice);
+			bu.setAllMoney(allmoney);
+			bu.setUsermoney(zhuti);
+			//set主表
+			ProcessList pro=bu.getProId();
+			proservice.index5(pro, val, lu, filePath,reuser.getUserName());
+			budao.save(bu);
+
+			//存审核表
+			proservice.index7(reuser, pro);
 		}else{
 			return "common/proce";
 		}
