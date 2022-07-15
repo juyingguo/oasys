@@ -26,6 +26,6 @@ a:hover {
 	<div class="row" style="padding-top: 15px;">
 		<div class="col-md-12 thistable">
 			<!--id="container"-->
-		  <#include "/process/managetable.ftl">
+		  <#include "../process/managetable.ftl">
 		</div>
 	</div>
